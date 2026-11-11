@@ -1,0 +1,12 @@
+# Configuration dan Password
+config.php
+.env
+
+# Uploding Folder / Attachment
+uploads/*
+!uploads/.gitkeep
+
+# IDE & System
+.vscode/
+Thumbs.db
+.DS_Store
