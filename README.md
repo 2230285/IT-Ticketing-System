@@ -53,3 +53,8 @@ it-ticketing-system/
 ├── .gitignore             # Pengecualian fail sensitif dan direktori tempatan
 ├── index.php              # Pintu masuk utama aplikasi
 └── README.md              # Dokumentasi projek
+
+1. **Klon Repositori**
+   ```bash
+   git clone [https://github.com/Pamiii/IT-Ticketing-System.git](https://github.com/Pamiii/IT-Ticketing-System.git)
+   cd IT-Ticketing-System
