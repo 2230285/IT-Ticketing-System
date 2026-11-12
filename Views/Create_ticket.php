@@ -1,7 +1,7 @@
 <?php
 // views/create_ticket.php
-require_once __DIR__ . '/../helpers/auth_guard.php';
-require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../Helpers/Auth_guard.php';
+require_once __DIR__ . '/../Config/Database.php';
 
 requireAuth();
 
@@ -55,7 +55,7 @@ $error = $_GET['error'] ?? null;
                 </div>
             <?php endif; ?>
 
-            <form action="../controllers/store_ticket.php" method="POST" enctype="multipart/form-data" class="space-y-5">
+            <form action="../Controllers/Store_ticket.php" method="POST" enctype="multipart/form-data" class="space-y-5">
                 
                 <!-- Subjek Tiket -->
                 <div>
@@ -108,7 +108,7 @@ $error = $_GET['error'] ?? null;
 
                 <!-- Butang Hantar -->
                 <div class="pt-4 flex items-center justify-end space-x-3 border-t border-slate-100">
-                    <a href="dashboard.php" class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-800 transition">Cancel</a>
+                    <a href="Dashboard.php" class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-800 transition">Cancel</a>
                     <button type="submit" class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-lg shadow-sm transition">
                         Raise
                     </button>

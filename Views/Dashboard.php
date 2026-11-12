@@ -1,7 +1,7 @@
 <?php
 // views/dashboard.php
-require_once __DIR__ . '/../helpers/auth_guard.php';
-require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../Helpers/Auth_guard.php';
+require_once __DIR__ . '/../Config/Database.php';
 
 // Make sure user already login
 requireAuth();
@@ -82,7 +82,7 @@ $recentTickets =$stmtRecent->fetchAll();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Papan Pemuka - IT Helpdesk</title>
+    <title>Dashboard - IT Helpdesk</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-100 min-h-screen font-sans text-slate-800">
@@ -98,7 +98,7 @@ $recentTickets =$stmtRecent->fetchAll();
         </div>
         <div class="flex items-center space-x-4">
             <span class="text-sm font-medium text-slate-600">Hai, <?= htmlspecialchars($userName) ?></span>
-            <a href="../auth/logout.php" class="text-sm font-medium text-red-600 hover:text-red-700 transition">Log Keluar</a>
+            <a href="../Auth/Logout.php" class="text-sm font-medium text-red-600 hover:text-red-700 transition">Log Keluar</a>
         </div>
     </nav>
 
@@ -196,7 +196,7 @@ $recentTickets =$stmtRecent->fetchAll();
                                         <?= date('d M Y, h:i A', strtotime($ticket['created_at'])) ?>
                                     </td>
                                     <td class="py-3.5 px-4 text-right">
-                                        <a href="view_ticket.php?id=<?= $ticket['id'] ?>" class="text-xs font-semibold text-indigo-600 hover:text-indigo-800">
+                                        <a href="View_ticket.php?id=<?= $ticket['id'] ?>" class="text-xs font-semibold text-indigo-600 hover:text-indigo-800">
                                             See &rarr;
                                         </a>
                                     </td>
