@@ -56,5 +56,5 @@ it-ticketing-system/
 
 1. **Klon Repositori**
    ```bash
-   git clone [https://github.com/Pamiii/IT-Ticketing-System.git](https://github.com/Pamiii/IT-Ticketing-System.git)
+   git clone [https://github.com/2230285/IT-Ticketing-System.git](https://github.com/2230285/IT-Ticketing-System.git)
    cd IT-Ticketing-System
