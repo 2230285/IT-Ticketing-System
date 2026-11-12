@@ -1,12 +1,12 @@
 <?php
 // controllers/store_ticket.php
-require_once __DIR__ . '/../helpers/auth_guard.php';
-require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../Helpers/Auth_guard.php';
+require_once __DIR__ . '/../Config/Database.php';
 
 requireAuth();
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header("Location: ../views/create_ticket.php");
+    header("Location: ../Views/Create_ticket.php");
     exit;
 }
 
@@ -19,7 +19,7 @@ $description = trim($_POST['description'] ?? '');
 // Field/Form Validation
 $allowedPriorities = ['low', 'medium', 'high', 'critical'];
 if (empty($subject) || !$categoryId || empty($description) || !in_array($priority, $allowedPriorities, true)) {
-    header("Location: ../views/create_ticket.php?error=empty_fields");
+    header("Location: ../Views/Create_ticket.php?error=empty_fields");
     exit;
 }
 
@@ -55,13 +55,13 @@ try {
         $file = $_FILES['attachment'];
 
         if ($file['error'] !== UPLOAD_ERR_OK) {
-            throw new RuntimeException("Ralat muat naik fail.");
+            throw new RuntimeException("Uploads file error.");
         }
 
         // Max size check (5MB) (5 * 1024 * 1024 bytes)
         if ($file['size'] > 5242880) {
             $pdo->rollBack();
-            header("Location: ../views/create_ticket.php?error=invalid_file");
+            header("Location: ../Views/Create_ticket.php?error=invalid_file");
             exit;
         }
 
@@ -76,18 +76,18 @@ try {
 
         if (!array_key_exists($mimeType, $allowedMimes)) {
             $pdo->rollBack();
-            header("Location: ../views/create_ticket.php?error=invalid_file");
+            header("Location: ../Views/Create_ticket.php?error=invalid_file");
             exit;
         }
 
         // Generate random file name (Avoid overwrite & Path traversal)
         $extension = $allowedMimes[$mimeType];
         $safeFileName = bin2hex(random_bytes(16)) . '.' . $extension;
-        $uploadDir = __DIR__ . '/../uploads/';
+        $uploadDir = __DIR__ . '/../Uploads/';
         $destination = $uploadDir . $safeFileName;
 
         if (!move_uploaded_file($file['tmp_name'], $destination)) {
-            throw new RuntimeException("Gagal memindahkan fail ke direktori simpanan.");
+            throw new RuntimeException("Fail to transfer file to store directory.");
         }
 
         // Store attachment to Db`ticket_attachments`
@@ -112,7 +112,7 @@ try {
     $pdo->commit();
 
     // Go to ticket details (Created ticket just now)
-    header("Location: ../views/view_ticket.php?id=" . $ticketId . "&created=1");
+    header("Location: ../Views/View_ticket.php?id=" . $ticketId . "&created=1");
     exit;
 
 } catch (Exception $e) {
@@ -120,6 +120,6 @@ try {
         $pdo->rollBack();
     }
     error_log("Ticket Creation Error: " . $e->getMessage());
-    header("Location: ../views/create_ticket.php?error=system_error");
+    header("Location: ../Views/Create_ticket.php?error=system_error");
     exit;
 }
