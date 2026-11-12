@@ -101,6 +101,6 @@ INSERT INTO `categories` (`id`, `name`, `description`) VALUES
 (4, 'Akaun & Akses', 'Reset kata laluan, akses e-mel, dan kebenaran fail kongsi');
 
 INSERT INTO `users` (`id`, `department_id`, `name`, `email`, `password`, `role`, `status`) VALUES
-(1, 1, 'System Administrator', 'admin@helpdesk.local', '$2y$10$wN9a3zOqjWkV1qP6y9s7u.vE6dKjKzL7F8sX4x6C0k7Y9G1x8vH6W', 'admin', 'active'),
-(2, 1, 'Ahmad Agent IT', 'agent@helpdesk.local', '$2y$10$wN9a3zOqjWkV1qP6y9s7u.vE6dKjKzL7F8sX4x6C0k7Y9G1x8vH6W', 'agent', 'active'),
-(3, 2, 'Siti Staff', 'user@helpdesk.local', '$2y$10$wN9a3zOqjWkV1qP6y9s7u.vE6dKjKzL7F8sX4x6C0k7Y9G1x8vH6W', 'user', 'active');
+(1, 1, 'System Administrator', 'admin@helpdesk.local', '$2y$10$pP.b8YBWGIuquaK4mIqd/.mC6eWrPyJ/EbkeodUs0Eoa.scVwoyTa', 'admin', 'active'),
+(2, 1, 'Ahmad Agent IT', 'agent@helpdesk.local', '$2y$10$pP.b8YBWGIuquaK4mIqd/.mC6eWrPyJ/EbkeodUs0Eoa.scVwoyTa', 'agent', 'active'),
+(3, 2, 'Siti Staff', 'user@helpdesk.local', '$2y$10$pP.b8YBWGIuquaK4mIqd/.mC6eWrPyJ/EbkeodUs0Eoa.scVwoyTa', 'user', 'active');
