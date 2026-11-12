@@ -13,7 +13,7 @@ $email = trim($_POST['email'] ?? '');
 $password = $_POST['password'] ?? '';
 
 if (empty($email) || empty($password)) {
-    header("Location: login.php?error=empty_fields");
+    header("Location: Login.php?error=empty_fields");
     exit;
 }
 
