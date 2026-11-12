@@ -11,7 +11,7 @@ if (session_status() === PHP_SESSION_NONE) {
  */
 function requireAuth(): void {
     if (!isset($_SESSION['user_id'])) {
-        header("Location: ../auth/login.php?error=unauthorized");
+        header("Location: ../Auth/Login.php?error=unauthorized");
         exit;
     }
 }
@@ -24,7 +24,7 @@ function checkRole(array $allowedRoles): void {
     requireAuth();
 
     if (!in_array($_SESSION['role'], $allowedRoles, true)) {
-        header("Location: ../views/unauthorized.php");
+        header("Location: ../Views/Unauthorized.php");
         exit;
     }
 }
@@ -34,7 +34,7 @@ function checkRole(array $allowedRoles): void {
  */
 function requireGuest(): void {
     if (isset($_SESSION['user_id'])) {
-        header("Location: ../views/dashboard.php");
+        header("Location: ../Views/Dashboard.php");
         exit;
     }
 }
