@@ -22,5 +22,5 @@ if (ini_get("session.use_cookies")) {
 // Destroy session data
 session_destroy();
 
-header("Location: login.php");
+header("Location: Login.php");
 exit;

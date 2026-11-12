@@ -1,6 +1,6 @@
 <?php
 // auth/login.php
-require_once __DIR__ . '/../helpers/auth_guard.php';
+require_once __DIR__ . '/../Helpers/Auth_guard.php';
 requireGuest();
 
 $error = $_GET['error'] ?? null;
@@ -35,7 +35,7 @@ $error = $_GET['error'] ?? null;
             </div>
         <?php endif; ?>
 
-        <form action="auth_process.php" method="POST" class="space-y-4">
+        <form action="Auth_process.php" method="POST" class="space-y-4">
             <div>
                 <label for="email" class="block text-sm font-medium text-slate-700 mb-1">E-mel</label>
                 <input type="email" id="email" name="email" required

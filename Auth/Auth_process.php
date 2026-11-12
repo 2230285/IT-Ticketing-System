@@ -2,10 +2,10 @@
 // auth/auth_process.php
 session_start();
 
-require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../Config/Database.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header("Location: login.php");
+    header("Location: Login.php");
     exit;
 }
 
@@ -35,10 +35,10 @@ if ($user && $user['status'] === 'active' && password_verify($password, $user['p
     $_SESSION['email'] = $user['email'];
     $_SESSION['role'] = $user['role'];
 
-    header("Location: ../views/dashboard.php");
+    header("Location: ../Views/Dashboard.php");
     exit;
 } else {
     // error message (elak account enumeration)
-    header("Location: login.php?error=invalid_credentials");
+    header("Location: Login.php?error=invalid_credentials");
     exit;
 }
