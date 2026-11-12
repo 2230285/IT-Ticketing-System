@@ -29,10 +29,10 @@ Sistem pengurusan tiket bantuan teknikal berasaskan web yang dibangunkan menggun
 
 | Halaman Log Masuk | Papan Pemuka (Dashboard) |
 | :---: | :---: |
-| ![Login](Docs/Screenshot Login.png) | ![Dashboard](Docs/Screenshot Dashboard.png) |
+| ![Login](Docs/Screenshot-login.png) | ![Dashboard](Docs/Screenshot-dashboard.png) |
 
 ### Paparan Butiran Tiket & Log Audit
-![Ticket Detail](Docs/Screenshot Ticket Detail.png)
+![Ticket Detail](Docs/Screenshot-ticket-details.png)
 
 ---
 
